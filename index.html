@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EldersHive - بزرگوں کا ڈیجیٹل آشیانہ</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts for English parts & general typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Header (Global) -->
+    <header class="app-header">
+        <div class="header-logo" onclick="app.showPage('landing')">
+            <i class="fa-solid fa-hands-holding-circle"></i> EldersHive
+        </div>
+        <div class="header-controls">
+            <button class="icon-btn voice-btn" title="وائس کمانڈ (آواز سے چلائیں)"><i class="fa-solid fa-microphone"></i></button>
+            <button class="icon-btn" title="فونٹ بڑا کریں"><i class="fa-solid fa-text-height"></i></button>
+            <div class="language-selector">
+                <i class="fa-solid fa-globe"></i> اردو
+            </div>
+            <button class="icon-btn theme-toggle" title="ڈارک موڈ"><i class="fa-solid fa-moon"></i></button>
+        </div>
+    </header>
+
+    <!-- App Container -->
+    <main id="app-container">
+
+        <!-- Landing Page -->
+        <section id="page-landing" class="page active">
+            <div class="hero">
+                <div class="hero-content">
+                    <h1>EldersHive میں خوش آمدید</h1>
+                    <p class="tagline">تنہائی کو الوداع کہیں، آپ کا اپنا پرسکون ڈیجیٹل گھر حاضر ہے۔</p>
+                    <button class="btn btn-primary btn-large" onclick="app.showPage('dashboard')">
+                        <i class="fa-solid fa-user-plus"></i> لاگ ان / نیا اکاؤنٹ
+                    </button>
+                </div>
+                <div class="hero-image">
+                    <!-- Placeholder using a CSS shape or gradient for aesthetics -->
+                    <div class="hero-placeholder-image">
+                        <i class="fa-solid fa-users fa-5x"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fa-solid fa-people-arrows feature-icon"></i>
+                    <h3>دوستوں کی محفل</h3>
+                    <p>ہم عمر ساتھیوں سے گپ شپ کریں اور اپنے پسندیدہ گروپس میں شامل ہوں۔</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fa-solid fa-heart-pulse feature-icon"></i>
+                    <h3>صحت اور سکون</h3>
+                    <p>دوائیوں کی یاددہانی، ہیلتھ الرٹس اور ماہرِ نفسیات سے رابطہ۔</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fa-solid fa-book-open feature-icon"></i>
+                    <h3>روحانی گوشہ</h3>
+                    <p>قرآن، آڈیو بکس اور پرانی یادوں پر مبنی کتب خانے تک آسان رسائی۔</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fa-solid fa-store feature-icon"></i>
+                    <h3>میرا کاروبار</h3>
+                    <p>نوجوانوں کی کونسلنگ کریں یا اپنی بنائی ہوئی اشیاء باآسانی فروخت کریں۔</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dashboard Page -->
+        <section id="page-dashboard" class="page">
+            <div class="dashboard-layout">
+                <!-- Sidebar Navigation -->
+                <aside class="sidebar">
+                    <div class="profile-card">
+                        <img src="https://ui-avatars.com/api/?name=Haji+Sahab&background=4A90E2&color=fff&size=80" alt="Profile" class="avatar">
+                        <h3>حاجی محمد دین</h3>
+                        <p>لاہور، پاکستان</p>
+                    </div>
+                    <nav class="side-nav">
+                        <a href="#" class="nav-item active"><i class="fa-solid fa-house"></i> ہوم پیج</a>
+                        <a href="#" class="nav-item" onclick="app.showPage('chat')"><i class="fa-solid fa-comments"></i> پیغامات <span class="badge">3</span></a>
+                        <a href="#" class="nav-item"><i class="fa-solid fa-users-rectangle"></i> میرے گروپس</a>
+                        <a href="#" class="nav-item"><i class="fa-solid fa-book"></i> لائبریری</a>
+                        <a href="#" class="nav-item"><i class="fa-solid fa-heart-pulse"></i> صحت ڈائری</a>
+                    </nav>
+                </aside>
+
+                <!-- Main Feed -->
+                <div class="main-feed">
+                    <div class="status-composer card">
+                        <h3>آج کیسا محسوس کر رہے ہیں؟</h3>
+                        <div class="composer-input">
+                            <button class="btn btn-voice-compose" title="بول کر لکھیں">
+                                <i class="fa-solid fa-microphone-lines"></i>
+                            </button>
+                            <input type="text" placeholder="اپنا پیغام یہاں لکھیں..." readonly>
+                            <button class="btn btn-primary">پوسٹ کریں</button>
+                        </div>
+                    </div>
+
+                    <!-- Post Card -->
+                    <div class="post card">
+                        <div class="post-header">
+                            <img src="https://ui-avatars.com/api/?name=Sh&background=9EAB88&color=fff&size=50" alt="User" class="avatar-small">
+                            <div class="post-meta">
+                                <h4>پروفیسر شفیع</h4>
+                                <span>2 گھنٹے پہلے • اردو زبان</span>
+                            </div>
+                            <button class="btn-icon auto-reader" title="یہ تحریر سنیں"><i class="fa-solid fa-volume-high"></i></button>
+                        </div>
+                        <div class="post-content">
+                            ملازمت سے ریٹائرمنٹ کے بعد پھولوں اور پودوں میں وقت باکمال گزرتا ہے۔ آج صبح میں نے اپنے لان میں یہ نئے گلاب کے پودے لگائے ہیں۔ مجھے امید ہے چند روز میں یہاں مزید رونق ہوگی، کیا آپ میں سے کسی کو باغبانی کا شوق ہے؟
+                        </div>
+                        <div class="post-actions">
+                            <button class="btn-action"><i class="fa-solid fa-heart"></i> پسند کریں</button>
+                            <button class="btn-action"><i class="fa-solid fa-comment"></i> جواب دیں</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Sidebar (Reminders) -->
+                <aside class="right-sidebar">
+                    <div class="reminder-card card">
+                        <h3><i class="fa-solid fa-bell reminder-icon"></i> صحت الرٹ!</h3>
+                        <p class="reminder-time">دوپہر 2:00 بجے</p>
+                        <p>بلڈ پریشر کی دوا کھانے کا وقت ہو گیا ہے۔</p>
+                        <button class="btn btn-success btn-full"><i class="fa-solid fa-check"></i> میں نے کھا لی ہے</button>
+                    </div>
+                    <div class="mentorship-card card">
+                        <h3><i class="fa-solid fa-chalkboard-user"></i> کونسلنگ سیشن</h3>
+                        <p>علی رضا (یونیورسٹی سٹوڈنٹ) کے ساتھ 15 منٹ کی کال شام 5 بجے طے ہے۔</p>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <!-- Chat / Security Interface Page -->
+        <section id="page-chat" class="page">
+            <div class="chat-layout">
+                <div class="chat-sidebar">
+                    <h2 class="sidebar-title">دوست</h2>
+                    <div class="contact-list">
+                        <div class="contact-item active">
+                            <img src="https://ui-avatars.com/api/?name=FR&background=D4AF37&color=fff" class="avatar-small">
+                            <div>
+                                <div class="contact-name">جناب رابرٹ (فرانس)</div>
+                                <div class="contact-status">آن لائن</div>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <img src="https://ui-avatars.com/api/?name=AQ&background=4A90E2&color=fff" class="avatar-small">
+                            <div>
+                                <div class="contact-name">عبد القدوس</div>
+                                <div class="contact-status offline">2 گھنٹے قبل</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="chat-main">
+                    <div class="chat-header">
+                        <div class="chat-header-user">
+                            <i class="fa-solid fa-arrow-right back-btn" onclick="app.showPage('dashboard')"></i>
+                            <img src="https://ui-avatars.com/api/?name=FR&background=D4AF37&color=fff" class="avatar-small">
+                            <h2>جناب رابرٹ</h2>
+                        </div>
+                        <div class="chat-header-actions">
+                            <button class="btn-icon"><i class="fa-solid fa-language"></i> آٹو ترجمہ: آن</button>
+                            <button class="btn btn-primary"><i class="fa-solid fa-video"></i> ویڈیو کال</button>
+                        </div>
+                    </div>
+                    <div class="chat-messages">
+                        <div class="message received">
+                            <div class="msg-bubble">
+                                <p>Bonjour mon ami, comment vas-tu aujourd'hui?</p>
+                                <div class="msg-translation">
+                                    <strong><i class="fa-solid fa-language"></i> اردو ترجمہ:</strong>
+                                    ہیلو میرے دوست، آج آپ کیسے ہیں؟
+                                </div>
+                            </div>
+                        </div>
+                        <div class="message sent">
+                            <div class="msg-bubble">
+                                <p>الحمدللہ، میں بالکل ٹھیک ہوں۔ آج موسم بہت خوشگوار ہے۔</p>
+                            </div>
+                        </div>
+                        
+                        <!-- AI Fake News / Scam Alert Mockup -->
+                        <div class="message received fake-news-alert">
+                            <div class="msg-bubble alert-bubble">
+                                🚨 <strong>سیکیورٹی الرٹ (AI Protector)</strong>
+                                <p>اس پیغام میں ایک مشکوک لنک (لاٹری / انعام) بھیجا گیا ہے جو دھوکہ ہو سکتا ہے۔ آپ کی حفاظت کے لیے ہم نے اس لنک کو چھپا دیا ہے۔</p>
+                                <button class="btn btn-warning btn-small">پھر بھی لنک دیکھیں (محفوظ نہیں)</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chat-input-area">
+                        <button class="btn-icon"><i class="fa-solid fa-microphone-lines"></i></button>
+                        <input type="text" placeholder="یہاں پیغام ٹائپ کریں...">
+                        <button class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
